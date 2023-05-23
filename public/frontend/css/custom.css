@@ -1,0 +1,86 @@
+.slider_section .detail-box h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #002c3e;
+    line-height: 47px;
+}
+
+.header_section {
+    padding: 0;
+}
+
+img.header-logo {
+    width: 121px;
+    height: 73px;
+}
+
+@media (min-width: 1200px) {
+    .main-container {
+        max-width: 1170px;
+        margin: 33px;
+    }
+}
+
+.row .text1 {
+    text-align: center !important;
+    /* vertical-align: text-bottom; */
+    font-weight: bold;
+    font-style: normal;
+    font-size: x-large;
+}
+
+.text-bg-color {
+    padding: 21px;
+    background-color: #44d6f7;
+}
+
+.our-mission {
+    justify-content: center;
+    margin: 25px;
+    color: #44d6f7;
+    font-weight: bold;
+}
+
+img.sub-img {
+    width: 564px;
+    height: 340px;
+}
+
+.icon {
+    color: #44d6f7;
+}
+
+.hero_area2 {
+    position: relative;
+    /* min-height: 100vh; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.food-details-heading {
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.food-detail-container {
+    margin: 36px;
+}
+
+.food-detail-btn {
+    color: #ffff;
+    background-color: #44d6f7;
+    border-radius: 4px;
+    border-color: #44d6f7;
+    margin: 12px 6px 12px 0px;
+    padding: 7px 12px 7px 12px;
+}
+
+.col-md-3.border {
+    padding: 10px;
+}
