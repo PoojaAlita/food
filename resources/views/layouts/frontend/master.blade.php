@@ -16,8 +16,10 @@
 
       <!-- bootstrap core css -->
       <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/bootstrap.css')}}" />
+        <!-- Sweet Alert-->
+        <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
       <!-- font awesome style -->
-      <link href="{{asset('/frontend/css/font-awesome.min.css')}}" rel="stylesheet" />
+      <link href="{{asset('/frontend/css/font-awesome.min.css')}}" rel="stylesheet" /> 
       <!-- Custom styles for this template -->
       <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" />
       <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
@@ -138,6 +140,23 @@
       <!-- bootstrap js -->
       <script src="{{asset('frontend/js/bootstrap.js')}}"></script>
       <!-- custom js -->
-      <script src="{{asset('frontend/js/custom.js')}}"></script>
+      {{-- <script src="{{asset('frontend/js/custom.js')}}"></script> --}}
+      <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+      <script src="{{ asset('assets/js/jquery.validate.min.js')}}"></script>
+
+        <!-- url -->
+        <script type="text/javascript">
+         var aurl = {!! json_encode(url('/')) !!}
+         /* Ajax Set Up */
+         $.ajaxSetup({
+              headers: {
+                  "X-CSRF-TOKEN": $('meta[name="_token"]').attr("content"),
+              },
+          });
+       </script>
+          @yield('plugin-script')
+          @yield('costome-script')
+          <script src="{{ asset('assets/js/sweet_alert.js') }}"></script>
+
    </body>
 </html>

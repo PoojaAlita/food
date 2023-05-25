@@ -32,10 +32,9 @@ class FoodController extends Controller
                 <i class="mdi mdi-delete"></i>
                 </button>';
 
-                $foodStatus = $Food->food_status == 0 ? 'Pending' : ($food->food_status == 2 ? 'Accept' : 'Request');
+                // $foodStatus = $Food->food_status == 0 ? 'Pending' : ($food->food_status == 2 ? 'Accept' : 'Request');
 
-                $request .= '<a href="">' . $foodStatus . '</a>';
-
+                // $request .= '<a href="">' . $foodStatus . '</a>';
                 $result[] = array(
                     "0"=>$key+1,
                     "1"=>ucfirst($Food->food_item),
@@ -46,8 +45,8 @@ class FoodController extends Controller
                     "6"=>$Food->city->name,
                     "7"=>$Food->contact_person,
                     "8"=>$Food->contact_person_mobile_number,
-                    "9"=>$request,
-                    "10"=>$button
+                    // "9"=>$request,
+                    "9"=>$button
                     );
 
 

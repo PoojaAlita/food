@@ -53,7 +53,7 @@ class RegisteredUserController extends Controller
     }
 
     public function listing(){
-        $userData = User::get();
+        $userData = User::where('id','!=',1)->get();
         return view('pages.donor_reg_listing',compact('userData'));
     }
 }

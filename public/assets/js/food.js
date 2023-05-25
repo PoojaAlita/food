@@ -23,7 +23,7 @@ var listing = $("#food_tbl").DataTable({
         { data: "7" },
         { data: "8" },
         { data: "9" },
-        { data: "10" },
+        // { data: "10" },
 
     ],
 });
@@ -225,3 +225,5 @@ $(document).ready(function() {
     });
 
 });
+
+

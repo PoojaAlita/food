@@ -16,12 +16,11 @@
         <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css">
         <!-- App Css-->
         <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css">
-
-        <!-- Custome Style-->
-        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
-        {{-- <link href="{{ asset('assets/select2/select2.min.css') }}" rel="stylesheet" /> --}}
+       
         <!-- Sweet Alert-->
         <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
+        <!-- Custome Style-->
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         @yield('plugin-css')
         @yield('custome-css')
     </head>
@@ -108,7 +107,8 @@
         <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
         <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
         <script src="{{asset('assets/js/app.js')}}"></script>
-        <script src="{{ asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
+        
+        <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
 
        <!-- url -->
       <script type="text/javascript">

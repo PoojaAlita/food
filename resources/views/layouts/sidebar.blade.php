@@ -57,9 +57,16 @@
                 <li>
                     <a href="{{route('dashboard.food')}}" class="waves-effect">
                     <i class="fa fa-list-alt" aria-hidden="true"></i>
-                        <span>List Food Detail</span>
+                        <span>Food Detail</span>
                     </a>
                 </li>    
+
+                <li>
+                    <a href="{{route('food.request')}}" class="waves-effect">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                        <span>Food Request Detail</span>
+                    </a>
+                </li> 
                 @endif
 
               <!--   @if (Auth::user()->status == 1)

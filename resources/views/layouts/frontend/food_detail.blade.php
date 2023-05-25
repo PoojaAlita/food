@@ -67,15 +67,49 @@
     </div>
     <div class="row">
         <div class="col-md-12 border">
-            <button type="submit" class="food-detail-btn" data-id="{{$food->id}}">Request Food</button>
+            <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
         </div>
     </div>
-
 @endforeach
 </div>
+
+<!-- Food Request Modal -->
+
+  <div class="modal fade" id="food_request_modal" tabindex="-1" role="dialog" aria-labelledby="title_food_request_modal"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold" id="title_food_request_modal">Add Food Request</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <form class="forms-sample" method="POST" enctype="multipart/form-data" id="food_request_form">
+          @csrf
+        <div class="md-form mb-2">
+          <input type="text" id="name" name="name" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form3">Your name</label>
+        </div>
+
+        <div class="md-form mb-3">
+          <input type="email" id="email" name="email" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form2">Your email</label>
+        </div>
+        </form>
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-indigo submit_food_request">Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 @endsection
 @section('costome-script')
-<script src="{{ asset('assets/js/food.js')}}"></script>
+<script src="{{ asset('assets/js/request_food.js')}}"></script>
 @endsection
 
 

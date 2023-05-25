@@ -29,6 +29,6 @@ class Food extends Model
         /* Relation To State*/
     public function city()
     {
-       return $this->hasOne(State::class, 'id', 'city_id');
+       return $this->hasOne(City::class, 'id', 'city_id');
     }
 }

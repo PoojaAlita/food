@@ -44,7 +44,6 @@
                           <th>City</th>
                           <th>Contact Person Name</th>
                           <th>Contact Person Mobile Number</th>
-                          <th>Request</th>
                           <th>Action</th>
                         </tr>
                       </thead>
