@@ -12,9 +12,9 @@ class FoodDetailController extends Controller
 {
     /*Dashboard Of Food Detail*/
     public function food_index(){
-        $food_details = FoodDetail::get();
+        $food_details = FoodDetail::where('status',1)->orWhere('status',2 )->first();
         $foods = Food::where('status',1)->with('state','city')->get();
-        return view('layouts.frontend.food_detail',compact('foods'));
+        return view('layouts.frontend.food_detail',compact('foods','food_details'));
     }
 
     //Storing Data Of Food Detail
@@ -30,6 +30,7 @@ class FoodDetailController extends Controller
         try {
        
            $FoodDetailData = FoodDetail::Create([
+               'food_id'=>$request->food_id,
                'name' => $request->name,
                'email'=>$request->email,
                'status'=> 1,

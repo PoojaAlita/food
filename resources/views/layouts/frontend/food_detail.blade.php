@@ -8,6 +8,7 @@
         </div>
 
     </div>
+    {{-- {{dd($food_details)}} --}}
 @foreach ($foods as $food)
     <div class="row">
         <div class="col-md-3 border">
@@ -62,14 +63,17 @@
            <b> Status</b>
         </div>
         <div class="col-md-3 border">
-            {{$food->status == 1 ? 'Not Confirmed Yet' : 'Confirmed'}}
+            {{$food_details->status != 1 && $food_details->status != 2 ? 'Not Confirmed Yet' : 'Confirmed'}}
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 border">
-            <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
+    @if($food_details->status != 1 && $food_details->status != 2){
+        <div class="row">
+            <div class="col-md-12 border">
+                <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
+            </div>
         </div>
-    </div>
+    }
+    @endif
 @endforeach
 </div>
 
@@ -88,6 +92,10 @@
       <div class="modal-body mx-3">
         <form class="forms-sample" method="POST" enctype="multipart/form-data" id="food_request_form">
           @csrf
+          @foreach ($foods as $food)
+            <input type="hidden" name="food_id" class="food_id" id="food_id" value="{{$food->id}}">
+          @endforeach
+
         <div class="md-form mb-2">
           <input type="text" id="name" name="name" class="form-control validate">
           <label data-error="wrong" data-success="right" for="form3">Your name</label>

@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('food_details', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('food_id');
+            $table->foreign('food_id')->references('id')->on('food');
             $table->string('name')->nullable();
             $table->string('email')->nullable();
             $table->boolean('status')->default('0')->comment('0 for Pending,1 for Request, 2 for Accept');

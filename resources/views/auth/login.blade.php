@@ -41,11 +41,16 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    {{-- <div class="row"> --}}
                                         <div class="text-center">
                                             <button  class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
                                         </div>
-                                    {{-- </div> --}}
+                                </div>
+                               
+                    
+                                <div class="mt-2 mb-0 row">
+                                    <div class="col-12 mt-4">
+                                        <a href="{{ route('password.request') }}"><i class="mdi mdi-lock"></i> Forgot your password?</a>
+                                    </div>
                                 </div>
                             </form>
                         </div>

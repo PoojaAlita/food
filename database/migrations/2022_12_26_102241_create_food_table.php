@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('food', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('food_item')->nullable();
             $table->text('description')->nullable();
             $table->dateTime('pickup_date')->nullable();
@@ -26,7 +28,6 @@ return new class extends Migration
             $table->string('contact_person')->nullable();
             $table->string('contact_person_mobile_number')->nullable();
             $table->boolean('status')->default('1')->comment('1 for Active, 0 for Delete');
-            $table->boolean('food_status')->default('0')->comment('0 for Pending, 1 for request 2 for Accept');
             $table->timestamps();
         });
     }

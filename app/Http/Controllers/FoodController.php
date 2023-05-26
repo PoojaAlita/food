@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Food,State,City};
+use Illuminate\Support\Facades\{Auth};
+
 
 
 class FoodController extends Controller
@@ -45,7 +47,6 @@ class FoodController extends Controller
                     "6"=>$Food->city->name,
                     "7"=>$Food->contact_person,
                     "8"=>$Food->contact_person_mobile_number,
-                    // "9"=>$request,
                     "9"=>$button
                     );
 
@@ -57,13 +58,14 @@ class FoodController extends Controller
      //Storing And Updating Data Of Food
      public function store(Request $request)
      {
-
          try {
-
             $foods = implode(',',$request->add_food).','.$request->food;
+            $user_id = Auth::user()->id;
+
             $FoodData = Food::updateOrCreate([
                  'id' => $request->id,
              ],[
+                'user_id' =>$user_id,
                 'food_item' => $foods,
                 'description'=>$request->description,
                 'pickup_date'=>$request->pickup_date,
@@ -74,12 +76,14 @@ class FoodController extends Controller
                 'contact_person_mobile_number'=>$request->contact_person_mobile_number,
              ]);
 
+
              $response = [
                  'status' => true,
                  'message' => 'Food Data '.($request->id ==0 ? 'Added' : 'Updated').' Successfully',
                  'icon' => 'success',
              ];
          } catch (\Throwable $e) {
+            dd($e);
              $response = [
                  'status' => false,
                  'message' => 'Something Went Wrong! Please Try Again.',

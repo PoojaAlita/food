@@ -81,6 +81,7 @@ $(document).ready(function() {
 /*Accept Request*/
 $("body").on("click", ".accept_food_request", function(event) {
     var id = $(this).data("id");
+    $('.food_id').val(id);
     event.preventDefault();
     if(id == 1){
         $.ajax({
