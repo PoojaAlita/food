@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{FoodDetail,Food};
+use Illuminate\Support\Facades\{Mail,Auth};
+
 
 
 class FoodDetailController extends Controller
@@ -60,7 +62,16 @@ class FoodDetailController extends Controller
         try {
             $update['status'] = 2;
             $data= FoodDetail::where('status',$request->id)->first();
+
+            $user['to'] =$data->email;
+              Mail::send('layouts.job_mail',['data' => $data], function ($messages) use ($user) {
+                 $messages->to($user['to']);
+                 $messages->subject('Accept Food Send Request');
+             });
+
             $data->update($update);
+
+             
             if(!is_null($data) ){
                 $response = [
                     'data'=>$data,
