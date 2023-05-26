@@ -64,9 +64,9 @@ class FoodDetailController extends Controller
             $data= FoodDetail::where('status',$request->id)->first();
 
             $user['to'] =$data->email;
-              Mail::send('layouts.job_mail',['data' => $data], function ($messages) use ($user) {
+              Mail::send('pages.food_request_accept_mail',['data' => $data], function ($messages) use ($user) {
                  $messages->to($user['to']);
-                 $messages->subject('Accept Food Send Request');
+                 $messages->subject('Accept Food Request');
              });
 
             $data->update($update);
@@ -75,13 +75,14 @@ class FoodDetailController extends Controller
             if(!is_null($data) ){
                 $response = [
                     'data'=>$data,
-                    'message' => "Successfully Accept Food Request.",
+                    'message' => "Send Food Request Successfully.",
                     'status'=>true,
                     'icon' => 'success',
 
                 ];
             }
         }catch (\Throwable $e) {
+            dd($e);
             $response = [
                 'status' => false,
                 'message' => "Something Went Wrong! Please Try Again.",
