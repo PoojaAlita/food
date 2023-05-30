@@ -63,17 +63,17 @@
            <b> Status</b>
         </div>
         <div class="col-md-3 border">
-            {{$food_details->status != 1 && $food_details->status != 2 ? 'Not Confirmed Yet' : 'Confirmed'}}
+            {{!is_null($food_details) && $food_details->status != 1 && $food_details->status != 2 ? 'Not Confirmed Yet' : 'Confirmed'}}
         </div>
     </div>
-    @if($food_details->status != 1 && $food_details->status != 2){
+    {{-- @if(!is_null($food_details) && $food_details->status != 1 && $food_details->status != 2) --}}
         <div class="row">
             <div class="col-md-12 border">
                 <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
             </div>
         </div>
-    }
-    @endif
+    
+    {{-- @endif --}}
 @endforeach
 </div>
 
