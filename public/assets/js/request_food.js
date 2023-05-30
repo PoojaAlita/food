@@ -1,23 +1,22 @@
 $(document).ready(function() {
 
-    /* Validation Of city Form */
-   /*  $("#food_request_form").validate({
+    /* Validation Of Food Request Form */
+    $("#food_request_form").validate({
         rules: {
-            city: {
+            name: {
                 required: true,
-                city_check: true
             },
-            state: {
+            email: {
                 required: true
             }
 
         },
         messages: {
-            city: {
-                required: "Please Enter City Name",
+            name: {
+                required: "Please Enter Name",
             },
-            state: {
-                required: "Please Select State Name",
+            email: {
+                required: "Please Enter Email",
 
             }
 
@@ -28,7 +27,7 @@ $(document).ready(function() {
         normalizer: function(value) {
             return $.trim(value);
         },
-    }); */
+    });
 
 
    
@@ -36,8 +35,8 @@ $(document).ready(function() {
 
     /* Add Food Request Modal */
     $('body').on("click", ".add_food_request", function() {
-        // $("#food_request_form").validate().resetForm();
-        // $("#food_request_form").trigger("reset");
+        $("#food_request_form").validate().resetForm();
+        $("#food_request_form").trigger("reset");
         $("#food_request_modal").modal("show");
         $(".id").val('');
         $("#title_food_request_modal").text("Add Food Request");
@@ -52,7 +51,7 @@ $(document).ready(function() {
         var form = $("#food_request_form")[0];
         var formData = new FormData(form);
 
-        // if ($("#food_request_form").valid()) {
+        if ($("#food_request_form").valid()) {
             $.ajax({
                 url: aurl + "/food-detail-store",
                 type: "POST",
@@ -72,7 +71,7 @@ $(document).ready(function() {
                     );
                 },
             });
-        // }
+        }
     });
 
 
