@@ -38,7 +38,9 @@
          @if (Route::current()->getName() !='dashboard.food.detail')
          <section class="slider_section ">
             <div class="slider_bg_box">
-               <img src="images/istockphoto.jpg" alt="">
+               {{-- <img src="images/istockphoto.jpg" alt=""> --}}
+               <img src="images/food3.jpg" alt="">
+
             </div>
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
