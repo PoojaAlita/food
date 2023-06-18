@@ -12,9 +12,10 @@ class FoodDetailController extends Controller
 {
     /*Dashboard Of Food Detail*/
     public function food_index(){
-        $food_details = FoodDetail::where('status',1)->orWhere('status',2 )->first();
+        $food_details = FoodDetail::where('status',1)->orWhere('status',2 )->get();
         $foods = Food::where('status',1)->with('state','city')->get();
         return view('layouts.frontend.food_detail',compact('foods','food_details'));
+
     }
 
     //Storing Data Of Food Detail
@@ -28,14 +29,14 @@ class FoodDetailController extends Controller
         );
 
         try {
-       
+
            $FoodDetailData = FoodDetail::Create([
                'food_id'=>$request->food_id,
                'name' => $request->name,
                'email'=>$request->email,
                'status'=> 1,
             ]);
-            
+
             $response = [
                 'status' => true,
                 'message' => 'Food Request Send Successfully',
@@ -55,13 +56,14 @@ class FoodDetailController extends Controller
     public function foodRequest(){
             $food_details = FoodDetail::get();
             return view('pages.request_food',compact('food_details'));
-        
+
     }
 
     /*Food Request Accept*/
     public function foodAcceptRequest(Request $request){
         try {
             $update['status'] = 2;
+            $accept['accept_food'] = 1;
             $data= FoodDetail::where('status',$request->id)->first();
 
             $user['to'] =$data->email;
@@ -71,8 +73,10 @@ class FoodDetailController extends Controller
              });
 
             $data->update($update);
+            Food::where('id',$data->food_id)->update($accept);
 
-             
+
+
             if(!is_null($data) ){
                 $response = [
                     'data'=>$data,

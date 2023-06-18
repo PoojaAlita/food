@@ -8,72 +8,73 @@
         </div>
 
     </div>
-    {{-- {{dd($food_details)}} --}}
 @foreach ($foods as $food)
-    <div class="row">
+@if ($food->accept_food != 1)
+<div class="row">
+    <div class="col-md-3 border">
+        <b>Contact Person Name</b>
+    </div>
+    <div class="col-md-3 border">
+        {{$food->contact_person}}
+        </div>
+    <div class="col-md-3 border">
+        <b> Person Mobile Number </b>
+    </div>
+    <div class="col-md-3 border">
+        {{$food->contact_person_mobile_number}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-3 border">
+       <b> State Name </b>
+    </div>
+    <div class="col-md-3 border">
+        {{$food->state->name}}
+        </div>
+    <div class="col-md-3 border">
+       <b> City Name </b>
+    </div>
+    <div class="col-md-3 border">
+        {{$food->city->name}}
+    </div>
+</div>
+<div class="row">
         <div class="col-md-3 border">
-            <b>Contact Person Name</b>
+            <b>Description</b>
         </div>
         <div class="col-md-3 border">
-            {{$food->contact_person}}
+            {{$food->description}}
+        </div>
+        <div class="col-md-3 border">
+            <b>Pickup Address</b>
+        </div>
+        <div class="col-md-3 border">
+            {{$food->pickup_address}}
             </div>
-        <div class="col-md-3 border">
-            <b> Person Mobile Number </b>
-        </div>
-        <div class="col-md-3 border">
-            {{$food->contact_person_mobile_number}}
+</div>
+<div class="row">
+    <div class="col-md-3 border">
+       <b> Pickup Date</b>
+    </div>
+    <div class="col-md-3 border">
+        {{ date('m-d-Y', strtotime($food->pickup_date)) }}
+    </div>
+    <div class="col-md-3 border">
+       <b> Status</b>
+    </div>
+
+    <div class="col-md-3 border">
+        Not Confirmed Yet
+    </div>
+</div>
+
+    <div class="row">
+        <div class="col-md-12 border">
+            <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-3 border">
-           <b> State Name </b>
-        </div>
-        <div class="col-md-3 border">
-            {{$food->state->name}}
-            </div>
-        <div class="col-md-3 border">
-           <b> City Name </b>
-        </div>
-        <div class="col-md-3 border">
-            {{$food->city->name}}
-        </div>
-    </div>
-    <div class="row">
-            <div class="col-md-3 border">
-                <b>Description</b>
-            </div>
-            <div class="col-md-3 border">
-                {{$food->description}}
-            </div>
-            <div class="col-md-3 border">
-                <b>Pickup Address</b>
-            </div>
-            <div class="col-md-3 border">
-                {{$food->pickup_address}}
-                </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3 border">
-           <b> Pickup Date</b>
-        </div>
-        <div class="col-md-3 border">
-            {{ date('m-d-Y', strtotime($food->pickup_date)) }}
-        </div>
-        <div class="col-md-3 border">
-           <b> Status</b>
-        </div>
-        <div class="col-md-3 border">
-            {{!is_null($food_details) && $food_details->status != 1 && $food_details->status != 2 ? 'Not Confirmed Yet' : 'Confirmed'}}
-        </div>
-    </div>
-    {{-- @if(!is_null($food_details) && $food_details->status != 1 && $food_details->status != 2) --}}
-        <div class="row">
-            <div class="col-md-12 border">
-                <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
-            </div>
-        </div>
-    
-    {{-- @endif --}}
+    @endif
+
 @endforeach
 </div>
 

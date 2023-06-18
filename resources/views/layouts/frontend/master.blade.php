@@ -19,7 +19,7 @@
         <!-- Sweet Alert-->
         <link href="{{asset('assets/libs/sweetalert2/sweetalert2.min.css')}}" rel="stylesheet" type="text/css" />
       <!-- font awesome style -->
-      <link href="{{asset('/frontend/css/font-awesome.min.css')}}" rel="stylesheet" /> 
+      <link href="{{asset('/frontend/css/font-awesome.min.css')}}" rel="stylesheet" />
       <!-- Custom styles for this template -->
       <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet" />
       <link rel="stylesheet" href="{{asset('frontend/css/custom.css')}}">
@@ -59,7 +59,7 @@
                                  </p>
                                  <div class="btn-box">
                                     <a href="{{route('dashboard.food.detail')}}" class="btn1">
-                                    Read More
+                                        Available Food List
                                     </a>
                                  </div>
                               </div>
@@ -82,7 +82,7 @@
                                  </p>
                                  <div class="btn-box">
                                     <a href="{{route('dashboard.food.detail')}}" class="btn1">
-                                    Read More
+                                        Available Food List
                                     </a>
                                  </div>
                               </div>
@@ -105,7 +105,7 @@
                                  </p>
                                  <div class="btn-box">
                                     <a href="{{route('dashboard.food.detail')}}" class="btn1">
-                                    Read More
+                                        Available Food List
                                     </a>
                                  </div>
                               </div>

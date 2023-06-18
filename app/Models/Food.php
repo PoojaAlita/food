@@ -18,6 +18,7 @@ class Food extends Model
         'city_id',
         'contact_person',
         'contact_person_mobile_number',
+        'accept_food',
     ];
     protected $casts = [ 'pickup_date'=>'datetime'];
 

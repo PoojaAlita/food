@@ -27,6 +27,7 @@ return new class extends Migration
             $table->foreign('city_id')->references('id')->on('cities');
             $table->string('contact_person')->nullable();
             $table->string('contact_person_mobile_number')->nullable();
+            $table->boolean('accept_food')->default('0')->comment('0 for not accept, 1 for accept');
             $table->boolean('status')->default('1')->comment('1 for Active, 0 for Delete');
             $table->timestamps();
         });

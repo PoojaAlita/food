@@ -16,9 +16,7 @@
                 <div class="col-md-10">
                   <h6 class="page-title">Food Request</h6>
                 </div>
-                <div class="col-md-2">
-                  <a  class="btn btn-primary add_food_request" style="float: right" id="add_food_request">Add Food Request</a>
-            </div>
+
             </div>
         </div>
         <!-- end page title -->
@@ -26,7 +24,7 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                 
+
                   <div class="table-responsive mt-2">
                     <table id="food_request_tbl" class="table">
                       <thead>
@@ -44,7 +42,7 @@
                           <th>{{$food_detail->name}}</th>
                           <th>{{$food_detail->email}}</th>
                           <th><a href="#" data-id="{{$food_detail->status}}" class="accept_food_request">{{$food_detail->status == 0 ? 'Pending' : ($food_detail->status == 2 ? 'Accept' : 'Request')}}</a></th>
-                          
+
                         </tr>
                         @endforeach
                       </tbody>
@@ -65,7 +63,7 @@
     <script src="{{ asset('assets/datatables-net-bs5/dataTables.bootstrap5.js') }}"></script>
 
     <script src="{{ asset('assets/js/jquery.validate.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 @endsection
 @section('costome-script')
