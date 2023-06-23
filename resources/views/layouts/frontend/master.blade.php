@@ -29,13 +29,13 @@
    </head>
    <body>
 
-      <div class="{{Route::current()->getName() !='dashboard.food.detail' ? 'hero_area' : 'hero_area2'}}">
+      <div class="{{Route::current()->getName() =='frontendDashboard'  ? 'hero_area' : 'hero_area2'}}">
          <!-- header section strats -->
 
          @include('layouts.frontend.header')
          <!-- end header section -->
          <!-- slider section -->
-         @if (Route::current()->getName() !='dashboard.food.detail')
+         @if (Route::current()->getName() =='frontendDashboard')
          <section class="slider_section ">
             <div class="slider_bg_box">
                {{-- <img src="images/istockphoto.jpg" alt=""> --}}
@@ -45,7 +45,7 @@
             <div id="customCarousel1" class="carousel slide" data-ride="carousel">
                <div class="carousel-inner">
                   <div class="carousel-item active">
-                     <div class="container ">
+                     <div class="container">
                         <div class="row">
                            <div class="col-md-7 col-lg-6 ">
                               <div class="detail-box">
@@ -54,7 +54,7 @@
                                     HELP TURN TEARS TO SURES
                                     </span>
                                  </h1>
-                                 <p>
+                                 <p class="slider-msg">
                                  In a world filled with challenges, we have the power to create positive change. Imagine a community where no one goes to bed hungry, where every person has access to nourishing meals and the opportunity for a brighter future. You have the power to make that vision a reality.
                                  </p>
                                  <div class="btn-box">
@@ -77,7 +77,7 @@
                                     HELP TURN TEARS TO SURES
                                     </span>
                                  </h1>
-                                 <p>
+                                 <p class="slider-msg">
                                  Every act of giving matters, no matter how big or small. Whether you're donating surplus food, volunteering your time, or raising awareness about food insecurity, your contribution can touch hearts and change lives. Your kindness has the power to nourish bodies, uplift spirits, and create lasting impact within our communities.
                                  </p>
                                  <div class="btn-box">
@@ -100,7 +100,7 @@
                                     HELP TURN TEARS TO SURES
                                     </span>
                                  </h1>
-                                 <p>
+                                 <p class="slider-msg">
                                  Join us as we stand together, united in our commitment to eradicate hunger and build a more equitable world. Your support can inspire others to take action, to embrace the spirit of giving, and to make a difference in their own unique ways.
                                  </p>
                                  <div class="btn-box">
@@ -145,7 +145,7 @@
       {{-- <script src="{{asset('frontend/js/custom.js')}}"></script> --}}
       <script src="{{asset('assets/libs/sweetalert2/sweetalert2.min.js') }}"></script>
       <script src="{{ asset('assets/js/jquery.validate.min.js')}}"></script>
-
+    
         <!-- url -->
         <script type="text/javascript">
          var aurl = {!! json_encode(url('/')) !!}

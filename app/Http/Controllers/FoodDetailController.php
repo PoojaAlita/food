@@ -12,9 +12,8 @@ class FoodDetailController extends Controller
 {
     /*Dashboard Of Food Detail*/
     public function food_index(){
-        $food_details = FoodDetail::where('status',1)->orWhere('status',2 )->get();
         $foods = Food::where('status',1)->with('state','city')->get();
-        return view('layouts.frontend.food_detail',compact('foods','food_details'));
+        return view('layouts.frontend.food_detail',compact('foods'));
 
     }
 
@@ -65,7 +64,7 @@ class FoodDetailController extends Controller
             $update['status'] = 2;
             $accept['accept_food'] = 1;
             $data= FoodDetail::where('status',$request->id)->first();
-
+            
             $user['to'] =$data->email;
               Mail::send('pages.food_request_accept_mail',['data' => $data], function ($messages) use ($user) {
                  $messages->to($user['to']);
@@ -74,7 +73,6 @@ class FoodDetailController extends Controller
 
             $data->update($update);
             Food::where('id',$data->food_id)->update($accept);
-
 
 
             if(!is_null($data) ){

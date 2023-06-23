@@ -7,9 +7,7 @@
 @endsection
 @section('content')
 <div class="page-content">
-
     <div class="container-fluid">
-
         <!-- start page title -->
         <div class="page-title-box">
             <div class="row align-items-center">
@@ -20,6 +18,9 @@
             </div>
         </div>
         <!-- end page title -->
+        <div class="loader-background" id="loader_bg" style="display:none">
+          <div class="spinner-border"  id="loader"   role="status"></div>
+       </div>
         <div class="row">
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
@@ -42,7 +43,6 @@
                           <th>{{$food_detail->name}}</th>
                           <th>{{$food_detail->email}}</th>
                           <th><a href="#" data-id="{{$food_detail->status}}" class="accept_food_request">{{$food_detail->status == 0 ? 'Pending' : ($food_detail->status == 2 ? 'Accept' : 'Request')}}</a></th>
-
                         </tr>
                         @endforeach
                       </tbody>

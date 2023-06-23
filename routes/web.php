@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\{ProfileController,StateController,CityController,FoodController,ContactController,FoodDetailController};
+use App\Http\Controllers\{ProfileController,StateController,CityController,FoodController,ContactController,FoodDetailController,AboutController};
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 use App\Models\{Food,State,City,User};
@@ -31,6 +31,9 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
+
 
 /*User Dashboard*/
 Route::get('/', function () {
@@ -70,20 +73,19 @@ Route::group(['middleware' => 'auth'], function(){
          Route::get('food-request',[FoodDetailController::class, 'foodRequest'])->name('food.request');
          Route::post('food-accept-request',[FoodDetailController::class, 'foodAcceptRequest'])->name('food.accept.request');
 
-
-
-
-
 });
 
   /* Food Detail Route*/
   Route::get('food-detail-index',[FoodDetailController::class, 'food_index'])->name('dashboard.food.detail');
   Route::post('food-detail-store',[FoodDetailController::class, 'store'])->name('food.detail.store');
 
-//   Route::get('food_pending',[FoodDetail::class,'food_request']);
-  Route::get('abc',[ContactController::class],'abc')->name('contact.index');
+/*About Route*/
+Route::get('/about', function(){
+    return view('layouts.frontend.about')->name('about');
+});
 
 
+Route::get('/about',[AboutController::class, 'index'])->name('about');
 
 
 require __DIR__.'/auth.php';

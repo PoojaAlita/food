@@ -13,17 +13,17 @@
                    <a class="nav-link" href="{{route('frontendDashboard')}}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">About </a>
-                 </li>
+                  <a class="nav-link" href="{{ route('about') }}">About</a>
+                </li>
 
                 <li class="nav-item">
-                   <a class="nav-link" href="{{route('contact.index')}}">Contact</a>
+                   <a class="nav-link" href="{{route('dashboard.food.detail')}}">Available Food List</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('register')}}">Doner</a>
+                    <a class="nav-link" href="{{route('register')}}">Sign Up</a>
                  </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="{{route('login')}}">Admin</a>
+                    <a class="nav-link" href="{{route('login')}}">Login In</a>
                  </li>
 
 

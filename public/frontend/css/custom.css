@@ -24,7 +24,6 @@ img.header-logo {
 
 .row .text1 {
     text-align: center !important;
-    /* vertical-align: text-bottom; */
     font-weight: bold;
     font-style: normal;
     font-size: x-large;
@@ -115,3 +114,69 @@ img.sub-img {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
+p.slider-msg {
+    color: #ffff;
+    font-style: initial;
+}
+.error{
+    color: #e10b0b;
+}
+.bolder-txt {
+    font-size: 45px;
+    font-weight: 800;
+}
+.text-center {
+    margin-top: 11px;
+    text-align: center!important;
+}
+.bg-purple {
+    background: #2d2c5c;
+}
+.text-light {
+    color: #f8f9fa!important;
+}
+
+.mission-cards {
+    min-height: 400px;
+}
+.shadow {
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+}
+
+@media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 576px){
+    .container, .container-sm {
+        max-width: 540px;
+    }
+    
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.color-purple {
+    /* color: #563f4f; */
+    color: #2d2c5c;
+}
+.justify-content-center {
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+}
+.mission-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-bottom: 40px;
+}
+

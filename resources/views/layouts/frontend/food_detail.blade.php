@@ -8,8 +8,9 @@
         </div>
 
     </div>
+    {{-- {{dd($foods)}} --}}
 @foreach ($foods as $food)
-@if ($food->accept_food != 1)
+@if ($food->accept_food == 0)
 <div class="row">
     <div class="col-md-3 border">
         <b>Contact Person Name</b>
@@ -74,7 +75,6 @@
         </div>
     </div>
     @endif
-
 @endforeach
 </div>
 
@@ -93,18 +93,17 @@
       <div class="modal-body mx-3">
         <form class="forms-sample" method="POST" enctype="multipart/form-data" id="food_request_form">
           @csrf
-          @foreach ($foods as $food)
-            <input type="hidden" name="food_id" class="food_id" id="food_id" value="{{$food->id}}">
-          @endforeach
-
-        <div class="md-form mb-2">
-          <input type="text" id="name" name="name" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form3">Your name</label>
+          <input type="hidden" name="food_id" class="food_id" id="food_id_m" value="">
+        <div class="mb-2">
+          <label>Your Name</label>
+          <input type="text" id="name" name="name" class="form-control">
+          {{-- <label data-error="wrong" data-success="right" for="form3">Your name</label> --}}
         </div>
 
-        <div class="md-form mb-3">
-          <input type="email" id="email" name="email" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form2">Your email</label>
+        <div class="mb-3">
+          <label>Your Email</label>
+          <input type="email" id="email" name="email" class="form-control">
+          {{-- <label data-error="wrong" data-success="right" for="form2">Your email</label> --}}
         </div>
         </form>
       </div>
