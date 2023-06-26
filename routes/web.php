@@ -56,6 +56,7 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post('city-listing', [CityController::class, 'listing']);
         Route::post('city-delete', [CityController::class, 'delete']);
         Route::post('validate-city', [CityController::class, 'validate_city']);
+        Route::post('get-city-name',[CityController::class, 'get_city_name']);
 
         /*Donor Listing Route*/
         Route::get('donor-listing', [RegisteredUserController::class, 'listing'])->name('dashboard.donor');

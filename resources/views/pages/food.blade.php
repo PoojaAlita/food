@@ -95,34 +95,24 @@
 
             <div class="form-group state mb-3">
               <label for="exampleInputPublicPrivateHospital">State</label>
-              <select class="select_dropdown form-select state form-control mySelect2" data-width="100%" name="state">
+              <select class="select_dropdown form-select state-dropdown form-control mySelect2" data-width="100%" name="state">
                 <option selected disabled value="0">Select State</option>
 
                 @if($data['state']->isEmpty())
-                <option selected disabled value="0">First Enter State</option>
+                <option selected disabled value="0">First Enter State Name</option>
               @else
                 @foreach($data['state'] as $states)
                 <option  value="{{$states->id}}">{{$states->name}}</option>
                 @endforeach
               @endif
              </select>
-          </div>
 
           <div class="form-group city mb-3">
             <label for="exampleInputPublicPrivateHospital">City</label>
-            <select class="select_dropdown form-select city form-control mySelect2" data-width="100%" name="city">
-              <option selected disabled value="0">Select City</option>
-
-              @if($data['city']->isEmpty())
-              <option selected disabled value="0">First Enter City</option>
-             @else
-              @foreach($data['city'] as $city)
-              <option  value="{{$city->id}}">{{$city->name}}</option>
-              @endforeach
-            @endif
+            <select class="select_dropdown form-select city-dropdown form-control mySelect2" data-width="100%" name="city">
+             
            </select>
         </div>
-
         <label class="form-label">Contact Person Name</label>
               <div class='form-group mb-3'>
                 <input type="text" class="form-control" name="contact_person_name" id="contact_person_name">

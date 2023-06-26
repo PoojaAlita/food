@@ -131,4 +131,16 @@ class CityController extends Controller
             return false;
          }
      }
+
+    /* Get State Wise City Data */
+    public function get_city_name(Request $request)
+    {
+        if(isset(($request)) && !is_null($request->state_id)){
+            $data = City::where("state_id",$request->state_id)->where('status',1)->get(["name", "id"]);
+             return response()->json($data);
+        }else{
+            return false;
+        }
+        
+    }
 }

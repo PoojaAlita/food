@@ -51,10 +51,12 @@ $(document).ready(function() {
                 required: true
             },
             contact_person_name: {
-                required: true
+                required: true,
+                lettersonly: true 
             },
             contact_person_mobile_number: {
-                required: true
+                required: true,
+                number:true
             },
 
 
@@ -83,6 +85,7 @@ $(document).ready(function() {
             },
             contact_person_mobile_number: {
                 required: "Please Enter Contact Person Mobile Number",
+                number:"Please Enter Numbers Only"
             },
 
 
@@ -95,6 +98,9 @@ $(document).ready(function() {
         },
     });
 
+    jQuery.validator.addMethod("lettersonly", function(value, element) {
+        return this.optional(element) || /^[a-z]+$/i.test(value);
+      }, "Letters only please"); 
 
 
     /* Add food Modal */
@@ -103,8 +109,8 @@ $(document).ready(function() {
         $("#food_form").trigger("reset");
         $("#food_modal").modal("show");
         $(".id").val('');
-        $("#title_food_modal").text("Add food");
-        $(".submit_food").text("Add food");
+        $("#title_food_modal").text("Add Food");
+        $(".submit_food").text("Add Food");
     });
 
     var filesArr = [];
@@ -152,9 +158,9 @@ $(document).ready(function() {
                 if (data.status) {
                     $("#food_form").trigger("reset");
                     $("#food_form").validate().resetForm();
-                    $("#title_food_modal").text("Update food");
+                    $("#title_food_modal").text("Update Food");
                     $("#food_modal").modal("show");
-                    $(".submit_food").text("Update food");
+                    $(".submit_food").text("Update Food");
                     $("#food").val(data.data.food.name);
                     $(
                         ".state option[value=" +
@@ -222,7 +228,36 @@ $(document).ready(function() {
             }
         })
     });
-
 });
+
+/* State City Dependent Dropdown With Ajax */
+$(document).on('change', '.state-dropdown', function() {
+    var idState = $(this).val();
+    $(".city-dropdown").html('');
+  
+    $.ajax({
+      url: aurl + "/get-city-name",
+      type: "POST",
+      data: {
+        state_id: idState,
+      },
+      dataType: 'json',
+      success: function(res) {
+        $('.city-dropdown').html('<option value="">-- Select City --</option>');
+        $.each(res, function(key, value) {
+            console.log('foreach under');
+            console.log(value);
+          $(".city-dropdown").append('<option value="' + value.id + '">' + value.name + '</option>');
+        });
+      }
+    });
+  });
+
+
+  
+  
+  
+  
+
 
 
