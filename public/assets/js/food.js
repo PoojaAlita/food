@@ -29,7 +29,7 @@ var listing = $("#food_tbl").DataTable({
 let images = [];
 $(document).ready(function() {
 
-    /* Validation Of food Form */
+    /* Validation Of Food Form */
     $("#food_form").validate({
         rules: {
             food: {
@@ -56,10 +56,10 @@ $(document).ready(function() {
             },
             contact_person_mobile_number: {
                 required: true,
-                number:true
+                number:true,
+                minlength: 10,
+                maxlength: 10,
             },
-
-
         },
         messages: {
             food: {
@@ -85,7 +85,9 @@ $(document).ready(function() {
             },
             contact_person_mobile_number: {
                 required: "Please Enter Contact Person Mobile Number",
-                number:"Please Enter Numbers Only"
+                number:"Please Enter Numbers Only",
+                minlength:"Please Enter At Least 10 Numbers.",
+                maxlength:"Please Enter no more than 10 Numbers",
             },
 
 
@@ -103,7 +105,7 @@ $(document).ready(function() {
       }, "Letters only please"); 
 
 
-    /* Add food Modal */
+    /* Add Food Modal */
     $("body").on("click", ".add_food", function() {
         $("#food_form").validate().resetForm();
         $("#food_form").trigger("reset");
@@ -115,7 +117,7 @@ $(document).ready(function() {
 
     var filesArr = [];
 
-    /* Adding And Updating food Modal */
+    /* Adding And Updating Food Modal */
     $(".submit_food").click(function(event) {
         event.preventDefault();
         var form = $("#food_form")[0];
@@ -144,7 +146,7 @@ $(document).ready(function() {
         }
     });
 
-    /* Display Update food Modal*/
+    /* Display Update Food Modal*/
     $("body").on("click", ".edit_food", function(event) {
         var id = $(this).data("id");
         $(".id").val(id);
@@ -245,8 +247,6 @@ $(document).on('change', '.state-dropdown', function() {
       success: function(res) {
         $('.city-dropdown').html('<option value="">-- Select City --</option>');
         $.each(res, function(key, value) {
-            console.log('foreach under');
-            console.log(value);
           $(".city-dropdown").append('<option value="' + value.id + '">' + value.name + '</option>');
         });
       }

@@ -59,7 +59,12 @@ class FoodController extends Controller
      public function store(Request $request)
      {
          try {
-            $foods = implode(',',$request->add_food).','.$request->food;
+            if(!is_null($request->add_food)){
+                $foods = implode(',',$request->add_food).','.$request->food;
+            }else{
+                $foods = $request->food;
+            }
+          
             $user_id = Auth::user()->id;
 
             $FoodData = Food::updateOrCreate([
@@ -83,6 +88,7 @@ class FoodController extends Controller
                  'icon' => 'success',
              ];
          } catch (\Throwable $e) {
+            dd($e);
              $response = [
                  'status' => false,
                  'message' => 'Something Went Wrong! Please Try Again.',

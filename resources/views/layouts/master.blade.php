@@ -40,10 +40,10 @@
             <!-- ============================================================== -->
             <div class="main-content">
                 @yield('content')
-              
+            </div>
+ 
                 <!-- End Page-content -->
                 @include('layouts.footer')
-            </div>
             <!-- end main content-->
 
         </div>
