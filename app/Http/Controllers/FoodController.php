@@ -26,17 +26,10 @@ class FoodController extends Controller
 
                 $button = '';
                 $request = '';
-             /*    $button .= '<button class="edit_food btn btn-sm btn-success m-1"  data-id="'.$Food['id'].'">
-                <i class="mdi mdi-square-edit-outline"></i>
-                </button>'; */
-
                 $button .= '<button class="delete btn btn-sm btn-danger m-1" data-id="'.$Food['id'].'">
                 <i class="mdi mdi-delete"></i>
                 </button>';
 
-                // $foodStatus = $Food->food_status == 0 ? 'Pending' : ($food->food_status == 2 ? 'Accept' : 'Request');
-
-                // $request .= '<a href="">' . $foodStatus . '</a>';
                 $result[] = array(
                     "0"=>$key+1,
                     "1"=>ucfirst($Food->food_item),
@@ -88,7 +81,6 @@ class FoodController extends Controller
                  'icon' => 'success',
              ];
          } catch (\Throwable $e) {
-            dd($e);
              $response = [
                  'status' => false,
                  'message' => 'Something Went Wrong! Please Try Again.',

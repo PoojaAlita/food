@@ -95,7 +95,7 @@
 
             <div class="form-group state mb-3">
               <label for="exampleInputPublicPrivateHospital">State</label>
-              <select class="select_dropdown form-select state-dropdown mySelect2" data-width="100%" name="state">
+              <select class="select_dropdown form-select state-dropdown mySelect2 form-control" data-width="100%" name="state">
                 <option selected disabled value="0">Select State</option>
                 @if($data['state']->isEmpty())
                     <option selected disabled value="0">First Enter State Name</option>
@@ -105,12 +105,12 @@
                 @endforeach
                 @endif
              </select>
-
+            </div>
           <div class="form-group city mb-3">
             <label for="exampleInputPublicPrivateHospital">City</label>
-            <select class="select_dropdown form-select city-dropdown  mySelect2" data-width="100%" name="city">
+            <select class="select_dropdown form-select city-dropdown mySelect2 form-control" data-width="100%" name="city">
            </select>
-        </div>
+         </div>
         <label class="form-label">Contact Person Name</label>
               <div class='form-group mb-3'>
                 <input type="text" class="form-control" name="contact_person_name" id="contact_person_name">
@@ -121,9 +121,10 @@
           <input type="text" class="form-control" name="contact_person_mobile_number" id="contact_person_mobile_number">
         </div>
 
-          </div>
-
+        </div>
+        <div class='form-group mb-3'>
           <button class="btn btn-primary submit_food" type="button"></button>
+        </div>
         </form>
       </div>
     </div>
