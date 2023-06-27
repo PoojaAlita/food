@@ -2,28 +2,50 @@
     <div class="navbar-header">
         <div class="d-flex">
             <!-- LOGO -->
-            <div class="navbar-brand-box">
+           {{--  <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
                         <img  src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22">
                     </span>
-                    <span class="logo-lg">
-                        {{-- <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="17"> --}}
-                    </span>
+                    
                 </a>
 
                 <a href="{{route('dashboard')}}" class="logo logo-light">
                     <span class="logo-sm">
-                        <!-- <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22"> -->
+                      
+                        <div class="logo-pop"><a  href="{{ route('dashboard') }}"> <img class="pop-logo" src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22"></a>
+
                     </span>
                     <span class="logo-lg">
-                         <!-- <img src="{{asset('logo/fk-removebg-preview.png')}}" alt="" height="18">  -->
                          <div class="logo-pop"><a  href="{{ route('dashboard') }}"> <img class="pop-logo" src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22"></a>
                  
                 </div>
                     </span>
                 </a>
+            </div> --}}
+
+            <div class="navbar-brand-box">
+                <a href="index.html" class="logo logo-dark">
+                    <span class="logo-sm">
+                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="17">
+                    </span>
+                </a>
+
+                <a href="index.html" class="logo logo-light">
+                    <span class="logo-sm">
+                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22">
+                    </span>
+                    <span class="logo-lg">
+                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="18">
+                    </span>
+                </a>
             </div>
+            
+
+           
 
             <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
                 <i class="mdi mdi-menu"></i>

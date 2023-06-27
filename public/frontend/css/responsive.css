@@ -32,6 +32,7 @@
 
 }
 
+
 @media (max-width: 767px) {
 
   .slider_bg_box img {
@@ -95,7 +96,6 @@
   }
 }
 
-@media (max-width: 420px) {}
 
 @media (max-width: 376px) {
   .slider_section .detail-box h1 {
@@ -105,6 +105,6 @@
 
 @media (min-width: 1200px) {
   .container {
-    max-width: 1170px;
+    max-width: 1175px;
   }
 }

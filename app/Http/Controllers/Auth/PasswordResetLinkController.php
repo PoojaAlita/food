@@ -26,7 +26,7 @@ class PasswordResetLinkController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request)
+    /* public function store(Request $request)
     {
         $request->validate([
             'email' => ['required', 'email'],
@@ -43,5 +43,29 @@ class PasswordResetLinkController extends Controller
                     ? back()->with('status', __($status))
                     : back()->withInput($request->only('email'))
                             ->withErrors(['email' => __($status)]);
+    } */
+
+
+public function store(Request $request)
+{
+    $request->validate([
+        'email' => ['required', 'email'],
+    ]);
+
+    try {
+        $status = Password::sendResetLink(
+           $request->only('email')
+        );
+
+        if ($status === Password::RESET_LINK_SENT) {
+            return back()->with('status', __('A password reset link has been sent to your email address.'));
+        } else {
+            return back()->withInput($request->only('email'))->withErrors(['email' => __($status)]);
+        }
+    } catch (\Exception $e) {
+        Log::error('Password reset email error: ' . $e->getMessage());
+        return back()->withInput($request->only('email'))->withErrors(['email' => __('An error occurred while sending the password reset email.')]);
     }
+}
+
 }

@@ -63,5 +63,5 @@
 @endsection
 @section('custome-script')
     <script src="{{asset('assets/js/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('admin/assets/js/login_validation.js')}}"></script>
+    <script src="{{asset('assets/js/login_validation.js')}}"></script>
 @endsection
