@@ -8,7 +8,7 @@
         </div>
 
     </div>
-    {{-- {{dd($foods)}} --}}
+@if (!$foods->isEmpty())
 @foreach ($foods as $food)
 @if ($food->accept_food == 0)
 <div class="row">
@@ -76,6 +76,10 @@
     </div>
     @endif
 @endforeach
+@else
+Food Not Available
+@endif 
+
 </div>
 
 <!-- Food Request Modal -->

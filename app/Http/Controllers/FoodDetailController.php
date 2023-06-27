@@ -61,8 +61,6 @@ class FoodDetailController extends Controller
                 return view('pages.request_food');
 
             }
-           
-
     }
 
     /*Food Request Accept*/
