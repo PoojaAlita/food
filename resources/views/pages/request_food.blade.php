@@ -37,6 +37,7 @@
                         </tr>
                       </thead>
                       <tbody>
+                        @if (isset($food_details) && !is_null($food_details))
                         @foreach ($food_details as $key=> $food_detail)
                         <tr>
                           <th>{{$key+1}}</th>
@@ -44,7 +45,9 @@
                           <th>{{$food_detail->email}}</th>
                           <th><a href="#" data-id="{{$food_detail->status}}" class="accept_food_request">{{$food_detail->status == 0 ? 'Pending' : ($food_detail->status == 2 ? 'Accept' : 'Request')}}</a></th>
                         </tr>
-                        @endforeach
+                        @endforeach  
+                        @endif
+                        
                       </tbody>
                     </table>
                   </div>

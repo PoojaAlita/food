@@ -20,7 +20,7 @@ class FoodController extends Controller
 
      //Listing Data Of Food
      public function listing(){
-        $data['Food']= Food::where('status',1)->with('state','city')->get();
+        $data['Food']= Food::where('status',1)->where('user_id',Auth::user()->id)->with('state','city')->get();
         $result = [];
         foreach ($data['Food'] as $key=>$Food) {
 

@@ -53,8 +53,15 @@ class FoodDetailController extends Controller
 
     // Food Request listing
     public function foodRequest(){
-            $food_details = FoodDetail::get();
-            return view('pages.request_food',compact('food_details'));
+            $food = Food::where('user_id',Auth::user()->id)->first();
+            if(!is_null($food)){
+                $food_details = FoodDetail::where('food_id',$food->id)->get();
+                return view('pages.request_food',compact('food_details'));
+            }else{
+                return view('pages.request_food');
+
+            }
+           
 
     }
 
