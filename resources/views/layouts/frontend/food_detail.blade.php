@@ -78,6 +78,8 @@
     @endif
 @endforeach
 @else
+<div class="container food-detail-container">
+
 Food Not Available
 @endif
 

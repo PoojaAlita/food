@@ -30,6 +30,7 @@ class FoodDetailController extends Controller
         try {
 
            $FoodDetailData = FoodDetail::Create([
+               'user_id'=> Auth::user()->id,
                'food_id'=>$request->food_id,
                'name' => $request->name,
                'email'=>$request->email,
@@ -44,6 +45,7 @@ class FoodDetailController extends Controller
                 'icon' => 'success',
             ];
         } catch (\Throwable $e) {
+            dd($e);
             $response = [
                 'status' => false,
                 'message' => 'Something Went Wrong! Please Try Again.',
@@ -55,14 +57,10 @@ class FoodDetailController extends Controller
 
     // Food Request listing
     public function foodRequest(){
-            $food = Food::where('user_id',Auth::user()->id)->first();
-            if(!is_null($food)){
-                $food_details = FoodDetail::where('food_id',$food->id)->get();
-                return view('pages.request_food',compact('food_details'));
-            }else{
-                return view('pages.request_food');
-
-            }
+          
+    $food_details = FoodDetail::where('user_id',Auth::user()->id)->get();
+    return view('pages.request_food',compact('food_details'));
+       
     }
 
     /*Food Request Accept*/
