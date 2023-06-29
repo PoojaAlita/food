@@ -11,7 +11,7 @@
                             <h5 class="text-white font-size-20">Welcome Back !</h5>
                             <p class="text-white-50">Sign in to continue to FCMS [Food Care Management System].</p>
                             <a href="{{route('dashboard')}}" class="logo logo-admin">
-                                <img src="{{asset('logo/fk-removebg-preview.png')}}" height="64" alt="logo">
+                                <img src="{{asset('logo/food.png')}}" height="62" alt="logo">
                             </a>
                         </div>
                     </div>

@@ -11,8 +11,8 @@
 }
 
 img.header-logo {
-    width: 121px;
-    height: 73px;
+    width: 163px;
+    height: 46px;
 }
 
 @media (min-width: 1200px) {
@@ -179,4 +179,13 @@ p.slider-msg {
     margin-left: -15px;
     margin-bottom: 40px;
 }
+.food_not_available{
+    font-size: 92px;
+    font-style: oblique;
+    border: bolk;
+    font-weight: 700; 
+    margin-bottom: 209px;
+
+}
+
 

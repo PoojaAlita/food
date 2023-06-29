@@ -98,3 +98,30 @@ div#loader {
     z-index: 999999;
     background: rgb(0 0 0 / 38%);
 }
+
+.logo-set{
+    width: 215px;
+    height: 59px;
+}
+
+.logo {
+    line-height: 88px;
+    height: 14px;
+    margin-left: -36px;
+
+}
+
+.logo-small-set {
+    width: 49px;
+    height: 46px;
+    margin-left: 19px;
+}
+
+.navbar-brand-box {
+    background: #333547;
+    width: 240px;
+
+}
+
+
+

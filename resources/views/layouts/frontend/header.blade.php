@@ -2,7 +2,7 @@
     <div class="container">
        <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="{{route('frontendDashboard')}}">
-            <img class="header-logo" src="{{asset('logo/fk-removebg-preview.png')}}" alt="" height="50">
+            <img class="header-logo" src="{{asset('logo/food-removebg-preview 1.png')}}" alt="" height="50">
 </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class=""> </span>

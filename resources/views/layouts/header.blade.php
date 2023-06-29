@@ -27,19 +27,19 @@
             <div class="navbar-brand-box">
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22">
+                        <img class="logo-small-set " src="{{asset('logo/food.png')}}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="17">
+                        <img class="logo-set " src="{{asset('logo/food-removebg-preview 1.png')}}" alt="" height="17">
                     </span>
                 </a>
 
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="22">
+                        <img class="logo-small-set"  src="{{asset('logo/food.png')}}" alt="" height="22">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{asset('logo/output-onlinepngtools.png')}}" alt="" height="18">
+                        <img class="logo-set" src="{{asset('logo/food-removebg-preview 1.png')}}" alt="" height="18">
                     </span>
                 </a>
             </div>

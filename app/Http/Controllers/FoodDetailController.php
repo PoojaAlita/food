@@ -45,7 +45,6 @@ class FoodDetailController extends Controller
                 'icon' => 'success',
             ];
         } catch (\Throwable $e) {
-            dd($e);
             $response = [
                 'status' => false,
                 'message' => 'Something Went Wrong! Please Try Again.',

@@ -10,7 +10,7 @@
                         <div class="text-primary text-center p-4">
                             <h5 class="text-white font-size-20 p-2">Reset Password</h5>
                             <a href="{{route('dashboard')}}" class="logo logo-admin">
-                                <img src="{{asset('logo/fk-removebg-preview.png')}}" height="64" alt="logo">
+                                <img src="{{asset('logo/food.png')}}" height="62" alt="logo">
                             </a>
                         </div>
                     </div>

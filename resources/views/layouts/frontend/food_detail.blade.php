@@ -77,12 +77,14 @@
     </div>
     @endif
 @endforeach
-@else
-<div class="container food-detail-container">
-
-Food Not Available
 @endif
-
+<div class="container food-detail-container">
+  <div class="row">
+    <div class="food_not_available">
+      Food Not Available
+    </div>
+  </div>
+</div>
 </div>
 
 <!-- Food Request Modal -->
