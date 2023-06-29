@@ -60,7 +60,7 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <div class="float-start mini-stat-img me-4">
-                                <img src="{{asset('admin/assets/images/services-icon/01.png')}}" alt="">
+                                <img src="{{asset('images/state6.png')}}" alt="">
                             </div>
                             <h5 class="font-size-16 text-uppercase text-white-50">State</h5>
                             <h4 class="fw-medium font-size-24">{{$data['state']}} <i
@@ -77,7 +77,7 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <div class="float-start mini-stat-img me-4">
-                                <img src="{{asset('images/food2.png.png')}}" alt="">
+                                <img src="{{asset('images/city.png')}}" alt="">
                             </div>
                             <h5 class="font-size-16 text-uppercase text-white-50">City</h5>
                             <h4 class="fw-medium font-size-24">{{$data['city']}} <i
@@ -93,10 +93,26 @@
                     <div class="card-body">
                         <div class="mb-4">
                             <div class="float-start mini-stat-img me-4">
-                                <img src="{{asset('admin/assets/images/services-icon/01.png')}}" alt="">
+                                <img src="{{asset('images/donor.png')}}" alt="">
                             </div>
                             <h5 class="font-size-16 text-uppercase text-white-50">User</h5>
                             <h4 class="fw-medium font-size-24">{{$data['user']}} <i
+                                    class="mdi mdi-arrow-up text-success ms-2"></i></h4>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card mini-stat bg-primary text-white">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <div class="float-start mini-stat-img me-4">
+                                <img src="{{asset('images/food2.png')}}" alt="">
+                            </div>
+                            <h5 class="font-size-16 text-uppercase text-white-50">Total Food Listing</h5>
+                            <h4 class="fw-medium font-size-24">{{$data['food']}} <i
                                     class="mdi mdi-arrow-up text-success ms-2"></i></h4>
                             
                         </div>
