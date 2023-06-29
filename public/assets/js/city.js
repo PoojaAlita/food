@@ -19,7 +19,6 @@ var listing = $("#city_tbl").DataTable({
         { data: "3" }
     ],
 });
-let images = [];
 $(document).ready(function() {
 
     /* Validation Of city Form */
@@ -71,7 +70,7 @@ $(document).ready(function() {
                 return false;
             } else return true;
         },
-        "city Already Exists"
+        "City Already Exists"
     );
 
 
@@ -81,11 +80,10 @@ $(document).ready(function() {
         $("#city_form").trigger("reset");
         $("#city_modal").modal("show");
         $(".id").val('');
-        $("#title_city_modal").text("Add city");
-        $(".submit_city").text("Add city");
+        $("#title_city_modal").text("Add City");
+        $(".submit_city").text("Add City");
     });
 
-    var filesArr = [];
 
     /* Adding And Updating city Modal */
     $(".submit_city").click(function(event) {
@@ -132,11 +130,11 @@ $(document).ready(function() {
                     $("#city_form").validate().resetForm();
                     $("#title_city_modal").text("Update city");
                     $("#city_modal").modal("show");
-                    $(".submit_city").text("Update city");
+                    $(".submit_city").text("Update City");
                     $("#city").val(data.data.city.name);
                     $(
                         ".state option[value=" +
-                        data.data.city.state +
+                        data.data.city.state_id+
                         "]"
                     ).prop("selected", true);
                     $(".form-select").select2({

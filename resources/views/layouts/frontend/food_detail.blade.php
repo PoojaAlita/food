@@ -10,7 +10,7 @@
     </div>
 @if (!$foods->isEmpty())
 @foreach ($foods as $food)
-@if ($food->accept_food == 0)
+@if ($food->accept_food == 0 || $food->accept_food == 2)
 <div class="row">
     <div class="col-md-3 border">
         <b>Contact Person Name</b>
@@ -68,17 +68,18 @@
         Not Confirmed Yet
     </div>
 </div>
-
-    <div class="row">
-        <div class="col-md-12 border">
+<div class="row">
+    <div class="col-md-12 border">
+            @if ($food->accept_food != 2)
             <button type="submit" class="food-detail-btn add_food_request" data-id="{{$food->id}}">Request Food</button>
+            @endif
         </div>
     </div>
     @endif
 @endforeach
 @else
 Food Not Available
-@endif 
+@endif
 
 </div>
 

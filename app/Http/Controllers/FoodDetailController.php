@@ -36,6 +36,8 @@ class FoodDetailController extends Controller
                'status'=> 1,
             ]);
 
+            $update['accept_food'] = 2;
+            Food::where('id',$FoodDetailData->food_id)->update($update);
             $response = [
                 'status' => true,
                 'message' => 'Food Request Send Successfully',
@@ -69,7 +71,7 @@ class FoodDetailController extends Controller
             $update['status'] = 2;
             $accept['accept_food'] = 1;
             $data= FoodDetail::where('status',$request->id)->first();
-            
+
             $user['to'] =$data->email;
               Mail::send('pages.food_request_accept_mail',['data' => $data], function ($messages) use ($user) {
                  $messages->to($user['to']);
