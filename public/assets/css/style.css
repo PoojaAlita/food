@@ -122,6 +122,9 @@ div#loader {
     width: 240px;
 
 }
+.mini-stat .mini-stat-img img {
+    max-width: 50px;
+}
 
 
 

@@ -3,7 +3,7 @@
 use App\Http\Controllers\{ProfileController,StateController,CityController,FoodController,ContactController,FoodDetailController,AboutController};
 use App\Http\Controllers\Auth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
-use App\Models\{Food,State,City,User};
+use App\Models\{Food,State,City,User,FoodDetail};
 
 
 /*
@@ -19,11 +19,14 @@ use App\Models\{Food,State,City,User};
 
 
 Route::get('/dashboard', function () {
-    $food = Food::where('status',1)->get()->count();
+    $data['food'] = Food::where('status',1)->get()->count();
+    $data['food_request'] = FoodDetail::where('status',1)->get()->count();
+    $data['food_pending'] = FoodDetail::where('status',0)->get()->count();
+
     $data['state']=State::where('status',1)->get()->count();
     $data['city'] = City::where('status',1)->get()->count();
     $data['user'] = User::where('status',1)->get()->count();
-    return view('layouts.dashboard',compact('food','data'));
+    return view('layouts.dashboard',compact('data'));
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
